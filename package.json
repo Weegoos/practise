@@ -1,8 +1,8 @@
 {
   "name": "practise",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "practise",
+  "description": "Vue, Quasar Practise",
+  "productName": "vue-quasarpractice",
   "author": "Weegoos <batyr.ashim05@mail.ru>",
   "private": true,
   "scripts": {
