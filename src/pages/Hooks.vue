@@ -49,6 +49,7 @@ const showChild = ref(false)
 
 const clickBtn = () => {
   showChild.value = !showChild.value
+  console.log("Batyr");
 }
 </script>
 
