@@ -19,6 +19,20 @@ const routes = [
     path: '/links',
     component: () => import('../pages/Links.vue')
   },
+  {
+    path: '/settings',
+    component: () => import('pages/Settings.vue'),
+    children: [
+      {
+        path: 'language',
+        component: () => import('components/LanguageSettings.vue')
+      },
+      {
+        path: 'style',
+        component: () => import('components/Style.vue')
+      }
+    ]
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
