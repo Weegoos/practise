@@ -16,6 +16,10 @@ const routes = [
     component: () => import('pages/Emits.vue')
   },
   {
+    path: '/components',
+    component: () => import('pages/Components.vue')
+  },
+  {
     path: '/links',
     component: () => import('../pages/Links.vue')
   },

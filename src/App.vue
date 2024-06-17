@@ -33,10 +33,16 @@ const buttons = [
     link: '/emits'
   },
   {
+    label: 'Components',
+    icon: 'code',
+    link: '/components'
+  },
+  {
     label: 'Links',
     icon: 'link',
     link: '/links'
   },
+
   {
     label: 'Settings',
     icon: 'settings',
