@@ -15,11 +15,19 @@
       label="Нажмите чтобы вызвать ошибку"
       @click="throwError"
     />
+
+    <p>{{ message }}</p>
   </div>
 </template>
 
 <script setup>
-import { onBeforeUpdate, onUpdated, ref } from "vue";
+import {
+  onActivated,
+  onBeforeUpdate,
+  onDeactivated,
+  onUpdated,
+  ref,
+} from "vue";
 import { useQuasar } from "quasar";
 
 const $q = useQuasar();
@@ -59,6 +67,16 @@ const submit = () => {
     });
   }
 };
+
+const message = ref("Message is inactive");
+
+onActivated(() => {
+  message.value = "Component is active";
+});
+
+onDeactivated(() => {
+  message.value = "Component is inactive";
+});
 </script>
 
 <style></style>
