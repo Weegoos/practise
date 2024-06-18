@@ -1,23 +1,30 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+
 <template>
-    <div class="q-pa-md q-gutter-sm" style="height: 80px">
-        <q-item clickable v-ripple>
-      <q-item-section side>
+  <div>
+    <q-item clickable v-ripple>
+      <q-item-section avatar>
         <q-avatar rounded size="48px">
-          <img src="https://cdn.quasar.dev/img/avatar.png">
-          <q-badge floating color="teal">new</q-badge>
+          <img
+            src="https://static1.squarespace.com/static/656f4e4dababbd7c042c4946/657236350931ee4538eea52c/65baf15103d8ad2826032a8a/1707422532886/how-to-stop-being-a-people-pleaser-1_1.jpg?format=1500w"
+            alt=""
+          />
+          <q-badge color="teal" floating label="New" />
         </q-avatar>
       </q-item-section>
       <q-item-section>
         <q-item-label>Mary</q-item-label>
-        <q-item-label caption>2 new messages</q-item-label>
+        <q-item-label caption>+9 messages</q-item-label>
       </q-item-section>
       <q-item-section side>
-        3 min ago
+        <q-item-label caption>5 min ago</q-item-label>
       </q-item-section>
     </q-item>
-    </div>
-  </template>
-  
-  <style>
-  </style>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style></style>

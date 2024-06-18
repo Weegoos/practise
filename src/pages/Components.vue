@@ -8,11 +8,12 @@
 </template>
 
 <script setup>
-import AjaxBar from '../components/AjaxBar.vue';
-import Avatar from '../components/Avatar.vue';
+import { useQuasar } from "quasar";
+import { onErrorCaptured } from "vue";
+import AjaxBar from "../components/AjaxBar.vue";
+import Avatar from "../components/Avatar.vue";
 
+const $q = useQuasar();
 </script>
 
-<style>
-
-</style>
+<style></style>
