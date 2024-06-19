@@ -2,7 +2,7 @@
 <template>
   <div
     class="q-pa-md relative-position"
-    style="height: 450px; max-height: 80vh"
+    style="height: 280px; max-height: 80vh"
   >
     <q-btn
       v-morph:btn:mygroup:300.resize="morphGroupModel"
@@ -13,14 +13,15 @@
       icon="add"
       @click="nextMorph"
     />
+
     <q-card
       v-morph:card1:mygroup:500.resize="morphGroupModel"
       class="absolute-bottom-left q-ma-md bg-primary text-white"
-      style="width: 45vw; border-bottom-left-radius: 2em"
+      style="width: 300px; border-bottom-left-radius: 2em"
     >
-      <q-card-section class="text-h6">Welcome New User</q-card-section>
-      <q-card-section class="text-subtitle">
-        The website is developed by Ashim batyr
+      <q-card-section class="text-h6"> New user </q-card-section>
+      <q-card-section class="text-subtitle1">
+        Please fill the details for a new user.
       </q-card-section>
 
       <q-card-actions align="right">
@@ -34,8 +35,9 @@
       style="width: 300px; border-bottom-left-radius: 2em"
     >
       <q-card-section class="text-h6"> Finalize registration </q-card-section>
+
       <q-card-section class="q-py-xl text-center text-subtitle2">
-        Thank you!
+        Thank you for registering.
       </q-card-section>
 
       <q-card-actions align="right">

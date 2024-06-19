@@ -78,6 +78,10 @@ const increment = () => {
   count.value++;
 };
 
+const toggleComponent = () => {
+  showComponent.value = !showComponent.value;
+};
+
 onRenderTracked((e) => {
   $q.notify({
     message: `Tracked effect: target=${JSON.stringify(e.target)}, key=${String(
