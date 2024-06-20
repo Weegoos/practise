@@ -7,7 +7,7 @@
       color="red"
       skip-hijack
     />
-    <q-btn label="Trigger" no-caps @click="trigger" />
+    <q-btn color="primary" label="Trigger" @click="trigger" />
   </div>
 </template>
 
@@ -17,15 +17,20 @@ import { ref } from "vue";
 const bar = ref(null);
 
 const trigger = () => {
-  const barRef = bar.value;
-  barRef.start();
-
-  setTimeout(() => {
+  try {
     const barRef = bar.value;
-    if (barRef) {
-      barRef.stop();
-    }
-  }, Math.random() * 3000 + 1000);
+    barRef.value.start();
+
+    setTimeout(() => {
+      const barRef = bar.value;
+
+      if (barRef) {
+        barRef.stop();
+      }
+    }, Math.random() * 3000 + 1000);
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 </script>
 
