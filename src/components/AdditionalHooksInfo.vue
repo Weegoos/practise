@@ -1,50 +1,58 @@
 <template>
- <div>
-    <div class="q-mt-md" v-for="ex in example" :key=ex.description>
-    <p><strong>{{ ex.description }}</strong></p>
-    <p><i>Пример:</i></p>
-    <div >
+  <div>
+    <div class="q-mt-md" v-for="ex in example" :key="ex.description">
+      <p>
+        <strong>{{ ex.description }}</strong>
+      </p>
+      <p><i>Пример:</i></p>
+      <div>
         <code>{{ ex.code }}</code>
+      </div>
+      <q-separator />
     </div>
-    <q-separator />
   </div>
- </div>
 </template>
 
 <script setup>
-import { onUnmounted } from 'vue';
-import { useQuasar } from 'quasar';
+import { onBeforeUnmount, onUnmounted } from "vue";
+import { useQuasar } from "quasar";
 
-const $q = useQuasar()
+const $q = useQuasar();
+onBeforeUnmount(() => {
+  $q.notify({
+    message: "Использование хука onBeforeUnmount",
+    timeout: 250,
+  });
+});
 onUnmounted(() => {
-    $q.notify({
-        message: 'Использование хука onUnmounted',
-        timeout: 250
-    })
-})
+  $q.notify({
+    message: "Использование хука onUnmounted",
+    timeout: 250,
+  });
+});
 
 const example = [
-    {
-        description: 'Использование хука onErrorCaptured',
-        code: `       onErrorCaptured((err, instance, info) => {
+  {
+    description: "Использование хука onErrorCaptured",
+    code: `       onErrorCaptured((err, instance, info) => {
     $q.notify({
         message: '{err}: {info}',
         color: 'negative'
     })
-    })`
-    },
-    {
-        description: 'Использование хука onUnmounted',
-        code: `onUnmounted(() => {
+    })`,
+  },
+  {
+    description: "Использование хука onUnmounted",
+    code: `onUnmounted(() => {
     $q.notify({
         message: 'Использование хука onUnmounted',
         timeout: 250
     })
-})`
-    },
-    {
-        description: 'Использование хука onBeforeMount',
-        code: `onBeforeMount(() => {
+})`,
+  },
+  {
+    description: "Использование хука onBeforeMount",
+    code: `onBeforeMount(() => {
   registerTimeout(() => {
     $q.notify({
       message: 'Страница загружается',
@@ -53,11 +61,11 @@ const example = [
       timeout: 1500
     })
   }, 500)
-})`
-    },
-    {
-        description: 'Использование хука onMounted',
-        code: `onMounted(() => {
+})`,
+  },
+  {
+    description: "Использование хука onMounted",
+    code: `onMounted(() => {
   registerTimeout(() => {
     $q.notify({
       message: 'Страница загружена',
@@ -66,11 +74,11 @@ const example = [
       color: 'positive'
     }, 1500)
   })
-})`
-    },
-    {
-        description: 'Использование хука onUpdated',
-        code: `onUpdated(() => {
+})`,
+  },
+  {
+    description: "Использование хука onUpdated",
+    code: `onUpdated(() => {
     if (userName.value.length < 4){
         $q.notify({
             message: 'Имя пользователя должно быть минимум 4 символа',
@@ -84,11 +92,9 @@ const example = [
             icon: 'check'
         })
     }
-})`
-    },
-    ]
+})`,
+  },
+];
 </script>
 
-<style>
-
-</style>
+<style></style>

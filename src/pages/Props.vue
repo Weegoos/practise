@@ -2,18 +2,14 @@
 <template>
   <div>
     <h4>Здесь мы практикуем Props в Vue js</h4>
-    <PropsComponent 
-    :message="message"
-    />
+    <PropsComponent :company="company" />
   </div>
 </template>
 
 <script setup>
-import PropsComponent from '../components/PropsComponent.vue';
+import PropsComponent from "../components/PropsComponent.vue";
 
-const message = 'Сообщение было успешно передано с основного компонента на дочерний'
+const company = ["Google", "Facebook"];
 </script>
 
-<style>
-
-</style>
+<style></style>
