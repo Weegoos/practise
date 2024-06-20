@@ -11,7 +11,7 @@
 import { QSpinnerGears, useQuasar } from "quasar";
 import { onErrorCaptured } from "vue";
 import AjaxBar from "../components/AjaxBar.vue";
-import Avatar from "../components/Avatar.vue";
+import Avatar from "../components/AvatarQuasar.vue";
 
 const $q = useQuasar();
 
