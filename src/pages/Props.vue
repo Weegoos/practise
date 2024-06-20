@@ -2,14 +2,16 @@
 <template>
   <div>
     <h4>Здесь мы практикуем Props в Vue js</h4>
-
+    <PropsComponent 
+    :message="message"
+    />
   </div>
 </template>
 
-<script>
-export default {
+<script setup>
+import PropsComponent from '../components/PropsComponent.vue';
 
-}
+const message = 'Сообщение было успешно передано с основного компонента на дочерний'
 </script>
 
 <style>

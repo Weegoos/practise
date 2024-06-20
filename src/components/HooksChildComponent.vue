@@ -5,12 +5,13 @@
     <q-btn label="Отправить" @click="submit" class="q-mb-sm"/> <br>
     <q-separator spaced inset vertical dark />
   <q-btn icon="error" no-caps label="Нажмите чтобы вызвать ошибку" @click="throwError" />
+  <div>{{ message }}</div>
 </div>
 </template>
 
 <script setup>
-import { onUpdated, ref } from "vue"
-import { useQuasar } from 'quasar';
+import { onActivated, onDeactivated, onUpdated, ref } from "vue"
+import { useQuasar, useTimeout } from 'quasar';
 
 const $q = useQuasar()
 const userName = ref('')
@@ -43,6 +44,27 @@ const submit = () => {
         })
     }
 }
+
+const message = ref('Component is inactive');
+const {registerTimeout} = useTimeout()
+onActivated(() => {
+  message.value = 'Component is activated';
+  registerTimeout(() => {
+    $q.notify({
+        message: 'Component is activated',
+        timeout: 500
+    })
+  }, 500);
+})
+
+onDeactivated(() => {
+    registerTimeout(() => {
+        $q.notify({
+        message: 'Component is inactivated',
+        timeout: 500
+    })
+    }, 1000);
+})
 </script>
 
 <style>

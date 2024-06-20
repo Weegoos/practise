@@ -2,14 +2,17 @@
 <template>
   <div>
     <h4>Страница для Hooks</h4>
-    <HooksChildComponent />
+    <keep-alive>
+    <HooksChildComponent v-if="showComponent" />
+  </keep-alive>
+  <q-btn @click="toggleComponent">Toggle Component</q-btn> <br>
     <q-btn no-caps label="Информация о хуков" @click="clickBtn" />
     <AdditionalHooksInfo v-if="showChild"/>
   </div>
 </template>
 
 <script setup>
-import { onBeforeMount, onErrorCaptured, onMounted, ref } from 'vue';
+import { onActivated, onBeforeMount, onErrorCaptured, onMounted, ref } from 'vue';
 import { QSpinnerGears, useQuasar, useTimeout } from 'quasar';
 import HooksChildComponent from '../components/HooksChildComponent.vue';
 import AdditionalHooksInfo from '../components/AdditionalHooksInfo.vue';
@@ -51,6 +54,14 @@ const clickBtn = () => {
   showChild.value = !showChild.value
   console.log("Batyr");
 }
+
+
+const showComponent = ref(true);
+
+function toggleComponent() {
+  showComponent.value = !showComponent.value;
+}
+
 </script>
 
 <style>

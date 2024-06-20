@@ -14,7 +14,7 @@
 <script setup>
 const links = [
   {
-    link: 'https://v3.ru.vuejs.org/ru/api/options-lifecycle-hooks.html#mounted',
+    link: 'https://ru.vuejs.org/api/composition-api-lifecycle',
     label: 'Ссылка на конспект хуков',
     description: 'Для конспекта всех хуков жизненного цикла в Vue js:'
   },
